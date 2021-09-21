@@ -2,24 +2,38 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const details=[
+    {name:'akkas',mobile:+88017},
+    {name:'khokkas',mobile:+88016},
+    {name:'tokkas',mobile:+88016},
+    {name:'sakkas',mobile:+88013}
+  
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {details.map(detail=><PersonDetails name={detail.name} mobile={detail.mobile}></PersonDetails>)}
+
     </div>
   );
 }
+
+
+function PersonDetails(props){
+  return(
+
+    <div className="details">
+      <h3>Name: {props.name}</h3>
+      <h4>Phone: {props.mobile}</h4>
+    </div>
+
+  );
+
+
+}
+
+
 
 export default App;
